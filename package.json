@@ -1,0 +1,19 @@
+{
+  "name": "portfolio-thierry",
+  "version": "1.0.0",
+  "description": "Portfólio pessoal de Thierry de Matos Azevedo.",
+  "main": "server.js",
+  "scripts": {
+    "dev": "node server.js",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "portfolio",
+    "github",
+    "javascript",
+    "rpa",
+    "protheus"
+  ],
+  "author": "Thierry de Matos Azevedo",
+  "license": "MIT"
+}

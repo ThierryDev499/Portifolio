@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Portfólio de Thierry de Matos Azevedo, desenvolvedor focado em automação, integrações, RPA, leitura de documentos e soluções web."
+    />
+    <meta name="theme-color" content="#101114" />
+    <title>Thierry de Matos Azevedo | Portfólio</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#inicio" aria-label="Voltar ao início">
+        <span class="brand-mark">TD</span>
+        <span>Thierry.dev</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Navegação principal">
+        <a href="#sobre">Sobre</a>
+        <a href="#projetos">GitHub</a>
+        <a href="#trajetoria">Trajetória</a>
+        <a href="#contato">Contato</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" id="inicio">
+        <div class="hero-backdrop" aria-hidden="true"></div>
+
+        <div class="hero-content">
+          <p class="eyebrow">Desenvolvedor | Automação | RPA | ERP Protheus</p>
+          <h1>Thierry de Matos Azevedo</h1>
+          <p class="hero-copy">
+            Sou um profissional de tecnologia organizado, analítico e focado em resultados. Construo soluções que conectam processos, dados e pessoas com automações, integrações e experiências web objetivas.
+          </p>
+
+          <div class="hero-actions" aria-label="Links principais">
+            <a class="button primary" href="https://github.com/ThierryDev499" target="_blank" rel="noreferrer">
+              Ver GitHub
+            </a>
+            <a
+              class="button secondary"
+              href="https://www.linkedin.com/in/thierry-de-matos-azevedo-8a3b15161/?locale=pt"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Ver LinkedIn
+            </a>
+          </div>
+        </div>
+
+        <aside class="profile-panel" aria-label="Resumo do perfil de Thierry">
+          <img
+            id="profileAvatar"
+            src="https://avatars.githubusercontent.com/u/88457739?v=4"
+            alt="Foto de perfil de Thierry de Matos Azevedo no GitHub"
+            width="168"
+            height="168"
+          />
+
+          <div class="profile-text">
+            <span class="status-dot">Disponível para projetos</span>
+            <strong>Transformo rotinas repetitivas em sistemas mais claros, rápidos e confiáveis.</strong>
+          </div>
+
+          <dl class="mini-stats" id="profileStats">
+            <div>
+              <dt>Repos</dt>
+              <dd>10</dd>
+            </div>
+            <div>
+              <dt>GitHub</dt>
+              <dd>2021</dd>
+            </div>
+            <div>
+              <dt>Stack</dt>
+              <dd>JS</dd>
+            </div>
+          </dl>
+        </aside>
+      </section>
+
+      <section class="signal-band" aria-label="Áreas de destaque">
+        <div class="signal-item">
+          <span>01</span>
+          <strong>Automação de processos</strong>
+          <p>RPA, leitura de PDFs, OCR e integrações para reduzir trabalho manual.</p>
+        </div>
+        <div class="signal-item">
+          <span>02</span>
+          <strong>Web e APIs</strong>
+          <p>Interfaces leves, consumo de APIs e páginas que comunicam com clareza.</p>
+        </div>
+        <div class="signal-item">
+          <span>03</span>
+          <strong>Negócio e ERP</strong>
+          <p>Visão prática para tecnologia aplicada ao dia a dia de empresas.</p>
+        </div>
+      </section>
+
+      <section class="section about-section" id="sobre">
+        <div class="section-heading">
+          <p class="eyebrow">Quem eu sou</p>
+          <h2>Um perfil técnico com cabeça de processo.</h2>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-copy">
+            <p>
+              Minha base combina desenvolvimento, automação e análise. Gosto de entender o fluxo antes de codar, porque a solução certa precisa resolver o problema inteiro: entrada de dados, regra de negócio, operação e manutenção.
+            </p>
+            <p>
+              Nos projetos públicos do GitHub aparecem estudos e provas práticas com JavaScript, HTML, CSS, Electron, OCR, leitura de PDF, APIs e um servidor simples em C. No LinkedIn, o perfil público também aponta atuação na SIMPLEA e formação acadêmica em andamento na Descomplica Faculdade Digital.
+            </p>
+          </div>
+
+          <div class="skill-wall" aria-label="Competências">
+            <span>JavaScript</span>
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>Electron</span>
+            <span>OCR</span>
+            <span>PDF parsing</span>
+            <span>APIs</span>
+            <span>RPA</span>
+            <span>ERP Protheus</span>
+            <span>Processos</span>
+            <span>Automação</span>
+            <span>Agentic AI</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section projects-section" id="projetos">
+        <div class="section-heading">
+          <p class="eyebrow">Projetos no GitHub</p>
+          <h2>Repositórios que mostram prática, estudo e evolução.</h2>
+        </div>
+
+        <div class="project-toolbar" aria-label="Filtros de projetos">
+          <button class="filter-button active" type="button" data-filter="all">Todos</button>
+          <button class="filter-button" type="button" data-filter="JavaScript">JavaScript</button>
+          <button class="filter-button" type="button" data-filter="HTML">HTML</button>
+          <button class="filter-button" type="button" data-filter="Outros">Outros</button>
+        </div>
+
+        <div class="repo-grid" id="repoGrid" aria-live="polite"></div>
+      </section>
+
+      <section class="section trajectory-section" id="trajetoria">
+        <div class="section-heading">
+          <p class="eyebrow">Trajetória</p>
+          <h2>Experiência com tecnologia feita para operação real.</h2>
+        </div>
+
+        <div class="timeline">
+          <article class="timeline-item">
+            <span>Agora</span>
+            <div>
+              <h3>SIMPLEA</h3>
+              <p>
+                Atuação registrada no perfil público do LinkedIn, com foco em tecnologia aplicada a processos empresariais, automação e ecossistema ERP.
+              </p>
+            </div>
+          </article>
+
+          <article class="timeline-item">
+            <span>2025-2026</span>
+            <div>
+              <h3>Descomplica Faculdade Digital</h3>
+              <p>
+                Formação acadêmica em tecnologia para consolidar fundamentos, prática e visão de produto.
+              </p>
+            </div>
+          </article>
+
+          <article class="timeline-item">
+            <span>2021+</span>
+            <div>
+              <h3>Construção pública no GitHub</h3>
+              <p>
+                Repositórios com experimentos e estudos em páginas web, automação, leitura de documentos, OCR, Electron, APIs e servidores.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="contact-section" id="contato">
+        <div>
+          <p class="eyebrow">Contato</p>
+          <h2>Vamos falar sobre automação, sistemas e projetos web.</h2>
+        </div>
+
+        <div class="contact-actions">
+          <a
+            class="button primary"
+            href="https://www.linkedin.com/in/thierry-de-matos-azevedo-8a3b15161/?locale=pt"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Chamar no LinkedIn
+          </a>
+          <a class="button dark" href="https://github.com/ThierryDev499?tab=repositories" target="_blank" rel="noreferrer">
+            Ver repositórios
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>Thierry de Matos Azevedo</span>
+      <span>Dados públicos do GitHub e LinkedIn atualizados na página quando online.</span>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
