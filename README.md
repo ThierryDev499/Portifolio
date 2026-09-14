@@ -1,6 +1,6 @@
 # Portfólio | Thierry de Matos Azevedo
 
-Portfólio pessoal criado em HTML, CSS e JavaScript puro, usando dados públicos do GitHub e informações públicas do LinkedIn para apresentar perfil, trajetória e projetos.
+Portfólio pessoal criado em HTML, CSS e JavaScript puro para apresentar Thierry de Matos Azevedo como arquiteto de software, engenheiro de prompt e profissional de IA aplicada, automação e sistemas de negócio.
 
 ## Como rodar
 
@@ -16,11 +16,12 @@ http://localhost:4173
 
 ## O que tem na página
 
-- Hero com nome, posicionamento profissional e links para GitHub e LinkedIn.
-- Seção "Quem eu sou" com resumo de perfil e competências.
+- Hero com posicionamento em arquitetura de software, prompt engineering e IA aplicada.
+- Seção de posicionamento com narrativa profissional mais autoral.
+- Blocos de assinatura sobre forma de trabalho, arquitetura pragmática e IA no fluxo.
 - Cards de repositórios públicos do GitHub com atualização dinâmica via API.
 - Fallback local para continuar exibindo os projetos mesmo sem internet.
-- Timeline com experiência, formação e construção pública no GitHub.
+- Timeline com camadas de bagagem técnica: negócio, sistemas, automação e IA.
 
 ## Fontes públicas usadas
 

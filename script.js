@@ -2,13 +2,63 @@ const githubUser = "ThierryDev499";
 
 const fallbackProfile = {
   avatar_url: "https://avatars.githubusercontent.com/u/88457739?v=4",
-  public_repos: 10,
+  public_repos: 15,
   followers: 1,
   created_at: "2021-08-04T19:19:30Z",
-  updated_at: "2026-04-23T23:31:34Z"
+  updated_at: "2026-07-30T02:40:43Z"
 };
 
 const fallbackRepos = [
+  {
+    name: "Portifolio",
+    description: "Portfólio pessoal publicado com GitHub Pages.",
+    html_url: "https://github.com/ThierryDev499/Portifolio",
+    language: "CSS",
+    stargazers_count: 0,
+    forks_count: 0,
+    pushed_at: "2026-09-14T13:59:53Z",
+    size: 0
+  },
+  {
+    name: "CRM",
+    description: "Base pública para sistema de relacionamento e gestão comercial.",
+    html_url: "https://github.com/ThierryDev499/CRM",
+    language: "Produto",
+    stargazers_count: 0,
+    forks_count: 0,
+    pushed_at: "2026-08-06T12:28:54Z",
+    size: 0
+  },
+  {
+    name: "Sales-Comercial",
+    description: "Produto comercial em TypeScript com foco em operação e acompanhamento de vendas.",
+    html_url: "https://github.com/ThierryDev499/Sales-Comercial",
+    language: "TypeScript",
+    stargazers_count: 0,
+    forks_count: 0,
+    pushed_at: "2026-07-28T00:47:38Z",
+    size: 1713
+  },
+  {
+    name: "cnpj-lookup",
+    description: "Frontend React standalone para consulta de CNPJs via API publica.cnpj.ws.",
+    html_url: "https://github.com/ThierryDev499/cnpj-lookup",
+    language: "TypeScript",
+    stargazers_count: 0,
+    forks_count: 0,
+    pushed_at: "2026-07-14T01:58:34Z",
+    size: 54
+  },
+  {
+    name: "nosNaRuaCardapio",
+    description: "Experiência web publicada para cardápio e presença digital.",
+    html_url: "https://github.com/ThierryDev499/nosNaRuaCardapio",
+    language: "HTML",
+    stargazers_count: 0,
+    forks_count: 0,
+    pushed_at: "2026-06-20T21:08:33Z",
+    size: 1722
+  },
   {
     name: "for-my-girlfriend",
     description: "Página HTML publicada com GitHub Pages.",
@@ -142,18 +192,50 @@ const getPrimaryLanguage = (repo) => {
   return "Projeto";
 };
 
-const getDescription = (repo) => {
-  if (repo.description) {
-    return repo.description;
-  }
+const highlightedRepos = new Set([
+  "CRM",
+  "Sales-Comercial",
+  "cnpj-lookup",
+  "Portifolio",
+  "OCR-Contas-de-luz",
+  "JS_DAEB_RS"
+]);
 
+const getRepoRole = (repo) => {
+  const roles = {
+    Portifolio: "Marca pessoal",
+    CRM: "Sistema de negócio",
+    "Sales-Comercial": "Produto comercial",
+    "cnpj-lookup": "Integração e dados",
+    nosNaRuaCardapio: "Produto web",
+    "OCR-Contas-de-luz": "Automação documental",
+    JS_DAEB_RS: "Leitura de PDF",
+    JS_PDF_SABESP: "Extração de dados",
+    CadastroElectron: "Aplicação desktop"
+  };
+
+  return roles[repo.name] || "Projeto público";
+};
+
+const getDescription = (repo) => {
   const descriptions = {
+    Portifolio: "Portfólio pessoal publicado com GitHub Pages e dados dinâmicos do GitHub.",
+    CRM: "Base pública para sistema de relacionamento e gestão comercial.",
+    "Sales-Comercial": "Produto comercial em TypeScript com foco em operação e acompanhamento de vendas.",
+    "cnpj-lookup": "Consulta empresarial em React/TypeScript conectada a API pública de CNPJ.",
+    nosNaRuaCardapio: "Experiência web publicada para cardápio e presença digital.",
     "for-my-girlfriend": "Página HTML publicada com GitHub Pages.",
+    "Web-Com-API-youtube": "Experimento web com consumo de API.",
+    JS_DAEB_RS: "Tratativa de leitura de PDF_DAEB utilizando JavaScript.",
+    HTML_e_CSS_indroducao: "Estudos de base em HTML e CSS.",
+    JS_PDF_SABESP: "Tratativa para obter dados de PDF utilizando JavaScript.",
+    "numero-secreto": "Projeto de lógica e compartilhamento.",
+    "OCR-Contas-de-luz": "Tratativas de leitura de contas de luz com OCR avançado.",
     CadastroElectron: "Aplicação de cadastro construída com Electron.",
     projeto: "Repositório inicial de estudos."
   };
 
-  return descriptions[repo.name] || "Projeto público no GitHub de Thierry.";
+  return descriptions[repo.name] || repo.description || "Projeto público no GitHub de Thierry.";
 };
 
 const filterRepos = (repos) => {
@@ -165,7 +247,7 @@ const filterRepos = (repos) => {
     const language = getPrimaryLanguage(repo);
 
     if (activeFilter === "Outros") {
-      return language !== "JavaScript" && language !== "HTML";
+      return language !== "TypeScript" && language !== "JavaScript" && language !== "HTML";
     }
 
     if (activeFilter === "HTML") {
@@ -184,15 +266,15 @@ const renderProfile = (profile, repos) => {
 
   profileStats.innerHTML = `
     <div>
-      <dt>Repos</dt>
+      <dt>Projetos</dt>
       <dd>${profile.public_repos || repos.length}</dd>
     </div>
     <div>
-      <dt>GitHub</dt>
+      <dt>Desde</dt>
       <dd>${githubSince}</dd>
     </div>
     <div>
-      <dt>Stacks</dt>
+      <dt>Frentes</dt>
       <dd>${languages.size}</dd>
     </div>
   `;
@@ -208,9 +290,10 @@ const renderRepos = (repos) => {
       const size = Number(repo.size || 0);
 
       return `
-        <article class="repo-card">
+        <article class="repo-card ${highlightedRepos.has(repo.name) ? "featured" : ""}">
           <header>
             <span class="repo-language">${language}</span>
+            <span class="repo-role">${getRepoRole(repo)}</span>
             <h3>${repo.name}</h3>
           </header>
           <p>${getDescription(repo)}</p>
