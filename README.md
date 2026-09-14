@@ -1,6 +1,6 @@
 # Portfólio | Thierry de Matos Azevedo
 
-Portfólio pessoal criado em HTML, CSS e JavaScript puro para apresentar Thierry de Matos Azevedo como arquiteto de software, engenheiro de prompt e profissional de IA aplicada, automação e sistemas de negócio.
+Portfólio pessoal criado em HTML, CSS e JavaScript puro para apresentar Thierry de Matos Azevedo como arquiteto de software, engenheiro de prompt e profissional de IA aplicada, RPA, automação documental e sistemas de negócio.
 
 ## Como rodar
 
@@ -19,6 +19,7 @@ http://localhost:4173
 - Hero com posicionamento em arquitetura de software, prompt engineering e IA aplicada.
 - Seção de posicionamento com narrativa profissional mais autoral.
 - Blocos de assinatura sobre forma de trabalho, arquitetura pragmática e IA no fluxo.
+- Case de automação documental para leitura de contas em PDF com JavaScript, OCR e RPA.
 - Cards de repositórios públicos do GitHub com atualização dinâmica via API.
 - Fallback local para continuar exibindo os projetos mesmo sem internet.
 - Timeline com camadas de bagagem técnica: negócio, sistemas, automação e IA.

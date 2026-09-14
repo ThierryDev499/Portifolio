@@ -81,7 +81,7 @@ const fallbackRepos = [
   },
   {
     name: "JS_DAEB_RS",
-    description: "Tratativa de leitura de PDF_DAEB utilizando JavaScript.",
+    description: "Leitura e tratamento em JavaScript de PDFs da DAEB/RS para automação de contas de água, energia e energia solar.",
     html_url: "https://github.com/ThierryDev499/JS_DAEB_RS",
     language: "JavaScript",
     stargazers_count: 0,
@@ -101,7 +101,7 @@ const fallbackRepos = [
   },
   {
     name: "JS_PDF_SABESP",
-    description: "Tratativa para obter dados de PDF utilizando JavaScript.",
+    description: "Parser em JavaScript para extração de dados de contas Sabesp em PDF dentro de fluxo RPA.",
     html_url: "https://github.com/ThierryDev499/JS_PDF_SABESP",
     language: "JavaScript",
     stargazers_count: 0,
@@ -121,7 +121,7 @@ const fallbackRepos = [
   },
   {
     name: "OCR-Contas-de-luz",
-    description: "Tratativas de leitura de contas de luz com OCR avançado.",
+    description: "OCR para leitura de contas de luz em PDF quando o arquivo não entrega texto estruturado.",
     html_url: "https://github.com/ThierryDev499/OCR-Contas-de-luz",
     language: "JavaScript",
     stargazers_count: 0,
@@ -131,7 +131,7 @@ const fallbackRepos = [
   },
   {
     name: "CadastroElectron",
-    description: "Aplicação de cadastro construída com Electron.",
+    description: "Aplicação desktop em Electron para apoio operacional à captação e automação de contas em PDF.",
     html_url: "https://github.com/ThierryDev499/CadastroElectron",
     language: "JavaScript",
     stargazers_count: 1,
@@ -198,7 +198,9 @@ const highlightedRepos = new Set([
   "cnpj-lookup",
   "Portifolio",
   "OCR-Contas-de-luz",
-  "JS_DAEB_RS"
+  "JS_DAEB_RS",
+  "JS_PDF_SABESP",
+  "CadastroElectron"
 ]);
 
 const getRepoRole = (repo) => {
@@ -209,9 +211,9 @@ const getRepoRole = (repo) => {
     "cnpj-lookup": "Integração e dados",
     nosNaRuaCardapio: "Produto web",
     "OCR-Contas-de-luz": "Automação documental",
-    JS_DAEB_RS: "Leitura de PDF",
-    JS_PDF_SABESP: "Extração de dados",
-    CadastroElectron: "Aplicação desktop"
+    JS_DAEB_RS: "RPA concessionárias",
+    JS_PDF_SABESP: "PDF parsing RPA",
+    CadastroElectron: "Operação RPA"
   };
 
   return roles[repo.name] || "Projeto público";
@@ -226,12 +228,12 @@ const getDescription = (repo) => {
     nosNaRuaCardapio: "Experiência web publicada para cardápio e presença digital.",
     "for-my-girlfriend": "Página HTML publicada com GitHub Pages.",
     "Web-Com-API-youtube": "Experimento web com consumo de API.",
-    JS_DAEB_RS: "Tratativa de leitura de PDF_DAEB utilizando JavaScript.",
+    JS_DAEB_RS: "Leitura e tratamento em JavaScript de PDFs da DAEB/RS para automação de contas de água, energia e energia solar.",
     HTML_e_CSS_indroducao: "Estudos de base em HTML e CSS.",
-    JS_PDF_SABESP: "Tratativa para obter dados de PDF utilizando JavaScript.",
+    JS_PDF_SABESP: "Parser em JavaScript para extrair dados de contas Sabesp em PDF dentro de fluxo RPA.",
     "numero-secreto": "Projeto de lógica e compartilhamento.",
-    "OCR-Contas-de-luz": "Tratativas de leitura de contas de luz com OCR avançado.",
-    CadastroElectron: "Aplicação de cadastro construída com Electron.",
+    "OCR-Contas-de-luz": "OCR para leitura de contas de luz em PDF quando o arquivo não entrega texto estruturado.",
+    CadastroElectron: "Aplicação desktop em Electron para apoio operacional à captação e automação de contas em PDF.",
     projeto: "Repositório inicial de estudos."
   };
 

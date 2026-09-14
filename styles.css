@@ -464,6 +464,47 @@ h3 {
   color: rgba(255, 255, 255, 0.72);
 }
 
+.case-section {
+  background: #f7f8f3;
+}
+
+.case-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.case-grid article {
+  min-height: 280px;
+  padding: clamp(22px, 3vw, 32px);
+  background: var(--white);
+  border: 1px solid rgba(10, 111, 79, 0.18);
+  border-radius: 8px;
+  box-shadow: 0 14px 34px rgba(16, 17, 20, 0.06);
+}
+
+.case-grid span {
+  display: inline-flex;
+  margin-bottom: 30px;
+  color: var(--green);
+  font-size: 0.78rem;
+  font-weight: 950;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.case-grid h3 {
+  max-width: 360px;
+  margin-bottom: 14px;
+  font-size: clamp(1.28rem, 2vw, 1.75rem);
+}
+
+.case-grid p {
+  max-width: 440px;
+  margin: 0;
+  color: var(--muted);
+}
+
 .projects-section {
   background: #eef2f6;
 }
@@ -662,7 +703,8 @@ h3 {
 
   .signal-band,
   .repo-grid,
-  .signature-grid {
+  .signature-grid,
+  .case-grid {
     grid-template-columns: 1fr;
   }
 
