@@ -247,7 +247,12 @@ summary:focus-visible {
   font-size: 19px;
   font-weight: 450;
 }
-.hero-role > span {
+.hero-role-primary,
+.hero-role-focus {
+  display: inline-block;
+  white-space: nowrap;
+}
+.role-separator {
   color: #77847c;
   margin-inline: 12px;
 }
@@ -823,7 +828,14 @@ summary:focus-visible {
     font-size: 15px;
     margin-top: 25px;
   }
-  .hero-role > span {
+  .hero-role-primary {
+    display: block;
+    margin-bottom: 3px;
+  }
+  .hero-role-divider {
+    display: none;
+  }
+  .role-separator {
     margin-inline: 6px;
   }
   .hero-description {
