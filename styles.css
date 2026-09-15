@@ -505,6 +505,48 @@ h3 {
   color: var(--muted);
 }
 
+.case-repositories {
+  margin-top: 36px;
+}
+
+.case-repositories > p {
+  color: var(--muted);
+}
+
+.case-components {
+  margin: 20px 0 0;
+  border-top: 1px solid var(--line);
+}
+
+.case-components > div {
+  display: grid;
+  grid-template-columns: minmax(0, 240px) minmax(0, 1fr);
+  gap: 8px 24px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.case-components dt {
+  font-weight: 750;
+}
+
+.case-components dd {
+  margin: 0;
+  color: var(--muted);
+}
+
+.case-components a {
+  color: var(--blue);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  overflow-wrap: anywhere;
+}
+
+.case-components a:hover,
+.case-components a:focus-visible {
+  color: var(--green);
+}
+
 .projects-section {
   background: #eef2f6;
 }
@@ -736,6 +778,7 @@ h3 {
     grid-template-columns: 1fr;
   }
 
+  .case-components > div,
   .timeline-item {
     grid-template-columns: 1fr;
   }

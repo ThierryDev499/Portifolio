@@ -19,8 +19,8 @@ http://localhost:4173
 - Hero com posicionamento em arquitetura de software, prompt engineering e IA aplicada.
 - Seção de posicionamento com narrativa profissional mais autoral.
 - Blocos de assinatura sobre forma de trabalho, arquitetura pragmática e IA no fluxo.
-- Case de automação documental para leitura de contas em PDF com JavaScript, OCR e RPA.
-- Cards de repositórios públicos do GitHub com atualização dinâmica via API.
+- Case único de automação de contas de consumo, reunindo CadastroElectron, OCR-Contas-de-luz, JS_PDF_SABESP e JS_DAEB_RS como partes do mesmo projeto.
+- Cards dos demais repositórios públicos com atualização dinâmica via API, sem repetir os componentes do case como projetos separados.
 - Fallback local para continuar exibindo os projetos mesmo sem internet.
 - Timeline com camadas de bagagem técnica: negócio, sistemas, automação e IA.
 

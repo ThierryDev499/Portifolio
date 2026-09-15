@@ -192,15 +192,18 @@ const getPrimaryLanguage = (repo) => {
   return "Projeto";
 };
 
+const consumptionAutomationRepos = new Set([
+  "CadastroElectron",
+  "OCR-Contas-de-luz",
+  "JS_PDF_SABESP",
+  "JS_DAEB_RS"
+]);
+
 const highlightedRepos = new Set([
   "CRM",
   "Sales-Comercial",
   "cnpj-lookup",
-  "Portifolio",
-  "OCR-Contas-de-luz",
-  "JS_DAEB_RS",
-  "JS_PDF_SABESP",
-  "CadastroElectron"
+  "Portifolio"
 ]);
 
 const getRepoRole = (repo) => {
@@ -268,7 +271,7 @@ const renderProfile = (profile, repos) => {
 
   profileStats.innerHTML = `
     <div>
-      <dt>Projetos</dt>
+      <dt>Repositórios</dt>
       <dd>${profile.public_repos || repos.length}</dd>
     </div>
     <div>
@@ -283,7 +286,7 @@ const renderProfile = (profile, repos) => {
 };
 
 const renderRepos = (repos) => {
-  const visibleRepos = filterRepos(repos);
+  const visibleRepos = filterRepos(repos.filter((repo) => !consumptionAutomationRepos.has(repo.name)));
 
   repoGrid.innerHTML = visibleRepos
     .map((repo) => {
