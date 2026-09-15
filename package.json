@@ -5,7 +5,10 @@
   "main": "server.js",
   "scripts": {
     "dev": "node server.js",
-    "start": "node server.js"
+    "start": "node server.js",
+    "test": "node --test tests/*.test.mjs",
+    "validate:html": "html-validate index.html",
+    "check": "npm run validate:html && npm test"
   },
   "keywords": [
     "portfolio",
@@ -15,5 +18,8 @@
     "protheus"
   ],
   "author": "Thierry de Matos Azevedo",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "html-validate": "^11.15.0"
+  }
 }
