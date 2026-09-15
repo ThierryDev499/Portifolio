@@ -288,6 +288,16 @@ const renderProfile = (profile, repos) => {
 const renderRepos = (repos) => {
   const visibleRepos = filterRepos(repos.filter((repo) => !consumptionAutomationRepos.has(repo.name)));
 
+  if (!visibleRepos.length) {
+    repoGrid.innerHTML = `
+      <p class="repo-empty">
+        Nenhum outro repositório neste filtro.
+        <a href="#cases">Ver o case de automação de contas.</a>
+      </p>
+    `;
+    return;
+  }
+
   repoGrid.innerHTML = visibleRepos
     .map((repo) => {
       const language = getPrimaryLanguage(repo);

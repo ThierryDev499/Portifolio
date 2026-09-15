@@ -592,6 +592,16 @@ h3 {
   box-shadow: 0 12px 34px rgba(16, 17, 20, 0.07);
 }
 
+.repo-empty {
+  grid-column: 1 / -1;
+  color: var(--muted);
+}
+
+.repo-empty a {
+  color: var(--blue);
+  text-decoration: underline;
+}
+
 .repo-card.featured {
   border-color: rgba(10, 111, 79, 0.32);
   box-shadow: 0 18px 48px rgba(10, 111, 79, 0.14);
