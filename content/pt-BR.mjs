@@ -1,0 +1,57 @@
+export default {
+  locale: "pt-BR",
+  githubUser: "ThierryDev499",
+  labels: {
+    github: "GitHub",
+    demo: "Demo",
+    githubFor: "Ver {name} no GitHub",
+    demoFor: "Abrir demonstração de {name}",
+    updated: "Atualizado em {date}",
+    repository: "Código disponível",
+    unavailable:
+      "As atualizações do GitHub estão temporariamente indisponíveis. Os projetos continuam acessíveis pelos links.",
+    openMenu: "Abrir menu",
+    closeMenu: "Fechar menu",
+  },
+  projects: [
+    {
+      slug: "simplea-sales-ai",
+      repository: "Sales-Comercial",
+      status: "published",
+      name: "Simplea Sales AI",
+      category: "IA APLICADA / SISTEMAS DE NEGÓCIO",
+      description:
+        "Aplicação desktop que reúne CRM, chat comercial com IA e consulta à base de conhecimento da empresa.",
+      stack: [
+        "TypeScript",
+        "Node.js",
+        "Fastify",
+        "React",
+        "Electron",
+        "SQLite",
+      ],
+      highlights: [
+        "CRM com leads, pipeline e acompanhamento comercial.",
+        "Base de conhecimento com embeddings e busca RAG.",
+        "Integração com múltiplos provedores de modelos de IA.",
+      ],
+      demo: null,
+    },
+    {
+      slug: "cnpj-lookup",
+      repository: "cnpj-lookup",
+      status: "published",
+      name: "CNPJ Lookup",
+      category: "APIs / DADOS EMPRESARIAIS",
+      description:
+        "Consulta de dados empresariais conectada a uma API pública, com leitura estruturada das informações cadastrais.",
+      stack: ["React", "TypeScript", "Vite", "REST API"],
+      highlights: [
+        "Consulta direta à API pública de CNPJ.",
+        "Renderização de dados e objetos JSON aninhados.",
+        "Tratamento de erros e compartilhamento por link.",
+      ],
+      demo: "https://thierrydev499.github.io/cnpj-lookup/",
+    },
+  ],
+};
