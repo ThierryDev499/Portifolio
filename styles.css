@@ -442,6 +442,21 @@ summary:focus-visible {
 .project-detail {
   padding-top: 29px;
 }
+.project-preview {
+  display: block;
+  margin-top: 22px;
+  border: 1px solid var(--line);
+}
+.project-preview img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.project-problem {
+  font-size: 14px;
+  margin-bottom: 16px;
+  color: var(--ink);
+}
 .project-points {
   padding-left: 17px;
   color: var(--muted);

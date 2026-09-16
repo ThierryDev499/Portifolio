@@ -1,4 +1,4 @@
-import content from "./content/pt-BR.mjs?v=20260915-redesign-1";
+import content from "./content/pt-BR.mjs?v=20260916-projects-1";
 import {
   loadGitHubUpdates,
   repositoryUrl,
@@ -58,6 +58,21 @@ function renderProjects() {
       element("p", "project-description", project.description),
       element("p", "project-stack", project.stack.join(" · ")),
     );
+    if (project.screenshot) {
+      const preview = element("a", "project-preview");
+      preview.href = project.screenshot;
+      preview.target = "_blank";
+      preview.rel = "noopener noreferrer";
+      preview.setAttribute("aria-label", `Ampliar captura de ${project.name}`);
+      const screenshot = element("img");
+      screenshot.src = project.screenshot;
+      screenshot.alt = `Interface de ${project.name} em execução com dados fictícios`;
+      screenshot.loading = "lazy";
+      screenshot.width = 1366;
+      screenshot.height = 900;
+      preview.append(screenshot);
+      overview.append(preview);
+    }
     const detail = element("div", "project-detail");
     const points = element("ul", "project-points");
     project.highlights.forEach((point) =>
@@ -80,6 +95,7 @@ function renderProjects() {
           content.labels.demoFor.replace("{name}", project.name),
         ),
       );
+    if (project.problem) detail.append(element("p", "project-problem", project.problem));
     detail.append(points, links);
     article.append(number, overview, detail);
     fragment.append(article);

@@ -32,10 +32,8 @@ test("only curated repositories supply dates, in presentation order", () => {
     ],
     projects,
   );
-  assert.deepEqual(updates, [
-    { repository: "Sales-Comercial", pushedAt: "2026-07-28T00:47:38.000Z" },
-    { repository: "cnpj-lookup", pushedAt: "2026-07-14T01:58:34.000Z" },
-  ]);
+  const dates = { "Sales-Comercial": "2026-07-28T00:47:38.000Z", "cnpj-lookup": "2026-07-14T01:58:34.000Z" };
+  assert.deepEqual(updates, projects.map(project => ({repository: project.repository, pushedAt: dates[project.repository] ?? null})));
 });
 
 test("missing, private and invalid repository dates do not break fallback content", () => {
@@ -58,7 +56,7 @@ test("missing, private and invalid repository dates do not break fallback conten
 test("demo links accept HTTPS and reject script URLs or embedded credentials", () => {
   assert.equal(
     safeHttpsUrl("https://thierrydev499.github.io/cnpj-lookup/"),
-    content.projects[1].demo,
+    content.projects.find(project => project.repository === "cnpj-lookup").demo,
   );
   for (const url of [
     null,
