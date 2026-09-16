@@ -26,7 +26,17 @@ Acesse http://localhost:4173/. A variável `PORT` permite usar outra porta. Os a
 
 ## Curadoria de projetos
 
-Os destaques atuais são **Simplea Sales AI** (`Sales-Comercial`) e **CNPJ Lookup**. As descrições foram conferidas nos respectivos repositórios. A demonstração do CNPJ Lookup usa o GitHub Pages existente.
+Os destaques atuais, em ordem editorial, são:
+
+1. [Simplea Sales AI](https://github.com/ThierryDev499/Sales-Comercial): CRM desktop e inteligência comercial.
+2. [AI Document Intelligence](https://github.com/ThierryDev499/ai-document-intelligence): PDFs, embeddings e perguntas com fontes usando IA local.
+3. [Automation Orchestrator](https://github.com/ThierryDev499/automation-orchestrator): fila persistente de automações, retries, logs e resultados.
+4. [AI Support Agent](https://github.com/ThierryDev499/ai-support-agent): triagem com RAG e revisão humana de respostas.
+5. [AI Lead Qualifier](https://github.com/ThierryDev499/ai-lead-qualifier): qualificação explicável, webhook idempotente e CRM simulado local.
+
+**CNPJ Lookup** permanece em **Outros projetos**, com sua demonstração pública existente. Os quatro projetos novos possuem código, instruções de execução, testes, exemplos reais de API e screenshots nos respectivos repositórios. Seus backends rodam localmente; não há botão de demonstração pública sem serviço hospedado.
+
+As imagens em `assets/projects/` são capturas das aplicações em execução. Os projetos novos usam dados fictícios; a captura do CNPJ Lookup usa o exemplo público do Banco do Brasil. O Simplea mantém o destaque sem screenshot enquanto não houver uma captura verificada disponível.
 
 O case **Automação de contas de consumo** reúne `CadastroElectron`, `OCR-Contas-de-luz`, `JS_PDF_SABESP` e `JS_DAEB_RS`. Esses componentes nunca são renderizados como quatro projetos independentes.
 
@@ -42,13 +52,15 @@ Para adicionar um destaque, inclua um item em `content/pt-BR.mjs`, com:
   name: "Nome do projeto",
   category: "ÁREA / CONTEXTO",
   description: "Descrição curta e verificável.",
+  problem: "Problema que a aplicação resolve.",
   stack: ["Tecnologia", "Tecnologia"],
   highlights: ["Ponto técnico", "Ponto técnico"],
+  screenshot: "assets/projects/identificador-unico.jpg",
   demo: null
 }
 ```
 
-Use `status: "planned"` enquanto o projeto não estiver publicado. O layout aceita novos itens sem alterar os componentes. Isso permite incluir futuramente `enterprise-rag-assistant`, `ai-agent-toolkit`, `ai-email-automation` e `ai-code-reviewer` quando estiverem prontos. Nenhum deles é apresentado como entrega existente.
+Use `status: "planned"` enquanto o projeto não estiver publicado; esses itens não aparecem na página. Use `group: "other"` para exibir um projeto em Outros projetos. O layout aceita novos itens sem alterar os componentes. O campo `screenshot` deve apontar para uma captura real e `demo` só deve ser preenchido quando existir uma demonstração pública funcional.
 
 ## Integração com GitHub
 

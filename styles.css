@@ -424,7 +424,8 @@ summary:focus-visible {
   font-weight: 550;
   margin-bottom: 11px;
 }
-.project h3 {
+.project h3,
+.project h4 {
   font-size: 28px;
   margin-bottom: 14px;
 }
@@ -456,6 +457,13 @@ summary:focus-visible {
   font-size: 14px;
   margin-bottom: 16px;
   color: var(--ink);
+}
+.other-projects {
+  margin-top: 54px;
+}
+.other-projects > h3 {
+  font-size: 20px;
+  margin-bottom: 24px;
 }
 .project-points {
   padding-left: 17px;
@@ -911,7 +919,8 @@ summary:focus-visible {
     gap: 16px;
     padding-block: 28px;
   }
-  .project h3 {
+  .project h3,
+  .project h4 {
     font-size: 25px;
   }
   .project-detail {

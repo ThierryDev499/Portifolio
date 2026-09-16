@@ -1,5 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
+import { readFileSync } from "node:fs";
 import {
   loadGitHubUpdates,
   repositoryUrl,
@@ -10,6 +11,20 @@ import {
 import content from "../content/pt-BR.mjs";
 
 const projects = selectFeaturedProjects(content.projects);
+
+test("new projects include a problem statement and valid JPEG screenshots", () => {
+  for (const project of projects.filter(project => project.repository !== "Sales-Comercial")) {
+    assert.ok(project.problem.length > 20);
+    assert.match(project.screenshot, /^assets\/projects\/[a-z-]+\.jpg$/);
+    const screenshot = readFileSync(new URL(`../${project.screenshot}`, import.meta.url));
+    assert.equal(screenshot.subarray(0, 3).toString("hex"), "ffd8ff");
+  }
+});
+
+test("portfolio distinguishes the five featured products from other projects", () => {
+  assert.deepEqual(projects.filter(project => project.group !== "other").map(project => project.repository), ["Sales-Comercial", "ai-document-intelligence", "automation-orchestrator", "ai-support-agent", "ai-lead-qualifier"]);
+  assert.deepEqual(projects.filter(project => project.group === "other").map(project => project.repository), ["cnpj-lookup"]);
+});
 
 test("curation keeps the professional case unified and unpublished projects hidden", () => {
   const candidates = [

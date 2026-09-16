@@ -1,4 +1,4 @@
-import content from "./content/pt-BR.mjs?v=20260916-projects-3";
+import content from "./content/pt-BR.mjs?v=20260916-projects-4";
 import {
   loadGitHubUpdates,
   repositoryUrl,
@@ -8,6 +8,7 @@ import {
 
 const projects = selectFeaturedProjects(content.projects);
 const featured = document.querySelector("#featuredProjects");
+const otherProjects = document.querySelector("#otherProjects");
 const activity = document.querySelector("#githubActivity");
 const status = document.querySelector("#githubStatus");
 const nav = document.querySelector("#mainNav");
@@ -39,6 +40,7 @@ function externalLink(label, href, accessibleLabel) {
 
 function renderProjects() {
   const fragment = document.createDocumentFragment();
+  const others = document.createDocumentFragment();
   projects.forEach((project, index) => {
     const article = element("article", "project");
     article.dataset.repository = project.repository;
@@ -49,7 +51,7 @@ function renderProjects() {
     );
     number.setAttribute("aria-hidden", "true");
     const overview = element("div", "project-overview");
-    const title = element("h3", "", project.name);
+    const title = element(project.group === "other" ? "h4" : "h3", "", project.name);
     title.id = project.slug;
     article.setAttribute("aria-labelledby", title.id);
     overview.append(
@@ -98,9 +100,10 @@ function renderProjects() {
     if (project.problem) detail.append(element("p", "project-problem", project.problem));
     detail.append(points, links);
     article.append(number, overview, detail);
-    fragment.append(article);
+    (project.group === "other" ? others : fragment).append(article);
   });
   featured.replaceChildren(fragment);
+  otherProjects.replaceChildren(others);
 }
 
 function renderActivity(updates = []) {
