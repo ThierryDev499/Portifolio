@@ -1,4 +1,4 @@
-import content from "./content/pt-BR.mjs?v=20260916-projects-4";
+import content from "./content/pt-BR.mjs?v=20260916-editorial-1";
 import {
   loadGitHubUpdates,
   repositoryUrl,
@@ -60,8 +60,9 @@ function renderProjects() {
       element("p", "project-description", project.description),
       element("p", "project-stack", project.stack.join(" · ")),
     );
+    let preview = null;
     if (project.screenshot) {
-      const preview = element("a", "project-preview");
+      preview = element("a", "project-preview");
       preview.href = project.screenshot;
       preview.target = "_blank";
       preview.rel = "noopener noreferrer";
@@ -73,7 +74,6 @@ function renderProjects() {
       screenshot.width = 1366;
       screenshot.height = 900;
       preview.append(screenshot);
-      overview.append(preview);
     }
     const detail = element("div", "project-detail");
     const points = element("ul", "project-points");
@@ -100,6 +100,7 @@ function renderProjects() {
     if (project.problem) detail.append(element("p", "project-problem", project.problem));
     detail.append(points, links);
     article.append(number, overview, detail);
+    if (preview) article.append(preview);
     (project.group === "other" ? others : fragment).append(article);
   });
   featured.replaceChildren(fragment);
