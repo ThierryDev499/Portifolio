@@ -1,4 +1,4 @@
-import content from "./content/pt-BR.mjs?v=20260916-projects-2";
+import content from "./content/pt-BR.mjs?v=20260916-projects-3";
 import {
   loadGitHubUpdates,
   repositoryUrl,
